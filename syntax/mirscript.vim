@@ -1,9 +1,9 @@
 " mirscript syntax file
 " Language: mirscript
 " Maintainer: Larry Xu
-" Last change: 2020/7/20
+" Last change: 2020/8/13
 
-if exists("b:current_syntax")
+if exists('b:current_syntax')
   finish
 endif
 
@@ -53,6 +53,8 @@ syn keyword msFunc CheckTitle
 syn keyword msFunc CheckRenewLevel RsetRenewLevel RenewLevel
 " 假人
 syn keyword msFunc IsDummy DummyStart DummyStop
+" OK框
+syn keyword msFunc SetUpgradeItem CheckBoxItemCount ReturnBoxItem UnallowItemIntoBox
 
 " 其他
 syn keyword msFunc Kick
@@ -60,10 +62,14 @@ syn keyword msFunc Kick
 " 商业版扩展命令
 syn keyword msFunc AddButton PickUpItems
 
+" nimir 扩展命令
+syn keyword msNnFunc NnDoLuaScript
+
 hi def link msComment Comment
 hi def link msNumber Number
 hi def link msCond Constant
 hi def link msFunc Keyword
+hi def link msNnFunc Underlined
 hi def link msBlockLabel Tag
 hi def link msVar Identifier
 hi def link msVarShow Identifier
@@ -72,6 +78,6 @@ hi def link msJmpLabel Float
 hi def link msFilepath PreProc
 hi def link msFilename String
 
-let b:current_syntax = "mirscript"
+let b:current_syntax = 'mirscript'
 
 " vim: sts=2 sw=2 et
